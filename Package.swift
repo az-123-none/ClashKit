@@ -45,3 +45,20 @@ let package = Package(
     )
   ]
 )
+// swift-tools-version: 5.7
+
+import PackageDescription
+
+let package = Package(
+  name: "ClashKit",
+  products: [
+    .library(name: "ClashKit", targets: ["ClashKit"])
+  ],
+  targets: [
+    .binaryTarget(
+      name: "ClashKit",
+      url: "https://github.com/Daemonomead/ClashKit/releases/download/1.0.0/ClashKit.xcframework.zip",
+      checksum: "c4f8fe8637beb73dba89759b0ad50ff483ae04523275fbc53f065282388f9a25"
+    )
+  ]
+)
