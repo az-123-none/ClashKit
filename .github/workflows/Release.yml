@@ -49,6 +49,7 @@ jobs:
       - name: Update package file
         run: |
           echo "// swift-tools-version: 5.7" >> Package.swift
+          echo "" >> Package.swift
           echo "import PackageDescription" >> Package.swift
           echo "" >> Package.swift
           echo "let package = Package(" >> Package.swift
