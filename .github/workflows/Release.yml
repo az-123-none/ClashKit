@@ -12,12 +12,15 @@ jobs:
   release:
     runs-on: macOS-12
     steps:
-    
+
+      - uses: actions/checkout@v3
+
       - uses: actions/checkout@v3
         with:
           repository: ${{secrets.RESPOSITORY}}
           token: ${{secrets.PAT}}
           ref: 'ios'
+          path: 'clash'
           
       - name: Setup Go
         uses: actions/setup-go@v3.5.0
@@ -61,14 +64,13 @@ jobs:
           echo "  ]" >> Package.swift
           echo ")" >> Package.swift
           
-      - name: Commit
-        run: |
-          git config --local user.email "github-actions@users.noreply.github.com"
-          git config --local user.name "github-actions"
-          git config remote.origin.url "https://${{ secrets.PAT }}@github.com/AppleClash/ClashKit.git"
-          git add ./Package.swift
-          git commit -m "Release ${{ github.event.inputs.version }}!!!" -a
-          git push origin main
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: ClashKit Release ${{ github.event.inputs.version }}!!!
+          commit_user_name: Arror
+          commit_user_email: hallo.maqiang@icloud.com
+          tagging_message: ${{ github.event.inputs.version }}
+          file_pattern: 'Package.swift'
           
       - name: Upload Release
         uses: softprops/action-gh-release@v1
