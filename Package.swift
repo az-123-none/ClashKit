@@ -10,8 +10,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "ClashKit",
-      url: "https://github.com/Daemonomead/ClashKit/releases/download/1.0.1/ClashKit.xcframework.zip",
-      checksum: "99fa7a74eabd0c7ff2e4dfe3bd0c7cfee8f03ee2ab924a6a00fdb6baee19e3d7"
+      url: "https://github.com/Daemonomead/ClashKit/releases/download/1.1.0/ClashKit.xcframework.zip",
+      checksum: "70aa84acf85668b285dbd612671117fb1f3007e34e228f0d6101d5cd6fc77c0a"
     )
   ]
 )
