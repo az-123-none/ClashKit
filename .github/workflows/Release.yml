@@ -60,7 +60,7 @@ jobs:
           echo "  targets: [" >> Package.swift
           echo "    .binaryTarget(" >> Package.swift
           echo "      name: \"ClashKit\"," >> Package.swift
-          echo "      url: \"https://github.com/daemonomead/ClashKit/releases/download/${{ github.event.inputs.version }}/ClashKit.xcframework.zip\"," >> Package.swift
+          echo "      url: \"https://github.com/daemooon/ClashKit/releases/download/${{ github.event.inputs.version }}/ClashKit.xcframework.zip\"," >> Package.swift
           echo "      checksum: \"${{ env.FILE_CHECKSUM }}\"" >> Package.swift
           echo "    )" >> Package.swift
           echo "  ]" >> Package.swift
